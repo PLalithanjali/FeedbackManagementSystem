@@ -1,0 +1,77 @@
+<!-- <div class="container-fluid">
+  <nav class="navbar  navbar-expand-sm" style="background-color: rgb(200, 250, 202);">
+      <ul class="navbar-nav" style="font-size: larger; position: relative;">
+        <li class="nav-item ">
+          <a class="nav-link" *ngIf = "getUser() == null"
+          routerLink="header-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "getUser() == null"
+          routerLink="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "getRole() == 'admin' && getUser() != null"
+          routerLink="course">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "getRole() == 'admin' && getUser() != null" 
+          routerLink="trainer">Trainers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "(getRole() == 'admin'||getRole() == 'coordinator') && getUser() != null" 
+          routerLink="program">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "getUser() != null"
+          routerLink="feedback">Feedbacks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "getRole() == 'admin' && getUser() != null"
+          routerLink="skill">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf = "getUser() != null"
+          routerLink="logout">Logout</a>
+        </li>
+      </ul>
+  </nav>
+</div> -->
+
+<mat-toolbar class="navbar" >
+    <nav class="navbar  navbar-expand-sm" >
+      <ul class="navbar-nav" style="font-size: larger; position: relative;">
+        <li class="nav-item ">
+          <mat-icon *ngIf="getUser() != null" (click)="inputSideNav.toggle()">list</mat-icon>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" *ngIf="getUser() == null" routerLink="header-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getUser() == null" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="course">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="trainer">Trainers</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="participant">Participants</a>
+        </li>       
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="(getRole() == 'admin'||getRole() == 'coordinator') && getUser() != null"
+            routerLink="program">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getUser() != null" routerLink="feedback">Feedbacks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="skill">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getUser() != null" (click)="inputSideNav.close()"routerLink="logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+</mat-toolbar>
+

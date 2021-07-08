@@ -1,0 +1,54 @@
+<div class="container" style="height: 600px;">
+    <div>
+        <h2>Update a Program</h2>
+        <h2>{{ myError }}</h2>
+    </div>
+    <div class="card" *ngFor="let program of allPrograms">
+        <div class="card-body">
+            <div>
+                <tr class="d-flex justify-content-between">
+                    <td>{{program.programId}}</td>
+                    <td>{{program.course.courseName}}</td>
+                    <td><button type="button" class="btn btn bg-warning" (click)="toggle()">Edit</button></td>
+                </tr>
+            </div>
+            <form [hidden]="show" (ngSubmit)="updateProgram(program)">
+                <div class="card">
+                    <div class="card-title">
+                        <div class="form-group">
+                            <label for="programId">Program Id:</label>
+                            <input type="text" class="form-control mx-2" id="programId" name="programId"
+                                [value]="program.programId">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" class="form-control mx-2" id="startDate" [(ngModel)]="program.startDate"
+                            name="startDate" placeholder="Enter Start Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date:</label>
+                        <input type="date" class="form-control mx-2" id="endDate" [(ngModel)]="program.endDate"
+                            name="endDate" placeholder="Enter End Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="course"> Course:</label>
+                        <input type="text" class="form-control mx-2" id="course" [(ngModel)]="program.course.courseName"
+                            name="course" [value]="program.course.courseName">
+                    </div>
+                    <div class="form-group">
+                        <label for="trainer"> Trainer:</label>
+                        <input type="text" class="form-control mx-2" id="trainer"
+                            [(ngModel)]="program.trainer.trainerName" name="trainer"
+                            [value]="program.trainer.trainerName">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="btn1" class="btn btn bg-warning" (click)="toggle()">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>

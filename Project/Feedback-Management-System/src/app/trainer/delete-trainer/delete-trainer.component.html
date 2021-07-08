@@ -1,0 +1,33 @@
+<div class="container">
+    <div>
+        <h2>Delete a Trainer</h2>
+        <h2>{{ myError }}</h2>
+    </div>
+    <div class="card" *ngFor="let trainer of allTrainers">
+        <div class="card-body">
+            <div>
+                <tr class="d-flex justify-content-between">
+                    <td>{{trainer.trainerName}}</td>
+                    <td><button type="button" class="btn btn bg-danger" (click)="toggle()">Delete</button></td>
+                </tr>
+            <form [hidden]="show"(ngSubmit)="deleteTrainer(trainer)">
+                <div class="form-group">
+                    <label for="trainerId">Trainer Id:</label>
+                    <input type="text" class="form-control mx-2" id="trainerId" [(ngModel)]="trainer.trainerId"
+                        name="trainerId" [value]="trainer.trainerId">
+                </div>
+                <div class="form-group">
+                    <label for="trainerName">Trainer Name:</label>
+                    <input type="text" class="form-control mx-2" id="trainerName" [(ngModel)]="trainer.trainerName"
+                        name="trainerName" [value]="trainer.trainerName">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="btn1"class="btn btn bg-danger">Delete</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+  
+</div>
+

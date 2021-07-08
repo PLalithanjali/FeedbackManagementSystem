@@ -1,0 +1,18 @@
+<div class="container">
+    <h2> Delete Program</h2>
+    <h2 class="bg-warning text-black">{{ myError }}</h2>
+
+    <div class="row">
+        <div class="card" style="width: 33%; height:33%;
+        object-fit: cover;" *ngFor="let program of allPrograms">
+            <div class="card-body">
+                <div>Duration: {{ program.startDate }} - {{ program.endDate }}</div>
+                <div>Course: {{ program.course.courseName }}</div>
+                <div>Trainer: {{ program.trainer.trainerName }}</div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" id="btn1"class="btn btn bg-danger" (click)="deleteProgram(program)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div><br><br>

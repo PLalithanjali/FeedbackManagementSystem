@@ -1,0 +1,101 @@
+<div>
+      <ul class="navbar-nav" style="font-size: larger; position: relative;">    
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getActive() == 'course'"
+          routerLink="add-course">Add Course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  *ngIf="getActive() == 'course'"
+          routerLink="update-course">Update a Course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getActive() == 'course'"
+          routerLink="delete-course">Delete Course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getActive() == 'course'"
+          routerLink="view-course">Open a Course</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getActive() == 'course'"
+          routerLink="list-course">All Courses</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'trainer'"
+            routerLink="add-trainer">Add Trainer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'trainer'"
+            routerLink="update-trainer">Update Trainer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'trainer'"
+            routerLink="delete-trainer">Delete Trainer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'trainer'"
+            routerLink="list-trainer">All Trainers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'participant'"
+            routerLink="add-participant">Add Participant</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'participant'"
+            routerLink="list-participant">List Participants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'participant'"
+            routerLink="enroll-participant">Enroll Participant</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'program' && getRole() == 'coordinator'"
+            routerLink="add-program">Add Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'program' && getRole() == 'coordinator'"
+            routerLink="update-program">Update Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'program' && getRole() == 'coordinator'"
+            routerLink="delete-program">Delete Program</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'program'"
+            routerLink="list-program">All Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'feedback' && getRole() == 'participant'"
+            routerLink="update-feedback">Update Feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'feedback'  && getRole() != 'participant'"
+            routerLink="list-program-feedback">Program Feedbacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'feedback'  && getRole() != 'participant'"
+            routerLink="list-trainer-feedback">Trainer Feedbacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'feedback' && getRole() != 'participant'"
+            routerLink="list-default-feedback">Defaulters Feedback Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'skill'"
+            routerLink="add-skill">Add Skill</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'skill'"
+            routerLink="update-skill">Update Skill</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'skill'"
+            routerLink="delete-skill">Delete Skill</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'skill'"
+            routerLink="list-skill">All Skills</a>
+          </li>
+
+      </ul>
+    </div>

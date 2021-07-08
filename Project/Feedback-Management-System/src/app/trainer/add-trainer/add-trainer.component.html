@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header display-4">
+            <p>Add Trainer</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="addTrainer(trainer)">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="trainerName">TrainerName</label>
+                    <input type="text" class="form-control mx-2" id="trainerName" [(ngModel)]="trainer.trainerName"
+                        name="trainerName" placeholder="Enter Trainer Name">
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add Trainer
+                </button><br><br>
+
+            </div>
+        </form>
+    </div>
+</div>

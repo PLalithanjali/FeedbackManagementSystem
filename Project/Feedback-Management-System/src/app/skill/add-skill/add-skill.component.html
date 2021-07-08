@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header display-4">
+            <p>Add Skill</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="addSkill(skill)">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="skillName">Skill Name</label>
+                    <input type="text" class="form-control mx-2" id="skillName" [(ngModel)]="skill.skillName"
+                        name="skillName" placeholder="Enter Skill Name">
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add Skill
+                </button><br><br>
+
+            </div>
+        </form>
+    </div>
+</div>
+
