@@ -1,16 +1,20 @@
 mat-sidenav{
-    background: slategrey;
+    background: rgba(85, 169, 218, 0.521);
     width: 200px;
     text-align: center;
     color:black;
 }
-.mat-typography{
-    background-color: indianred;
+mat-sidenav-container{
+    background: transparent;
 }
 
-/* app-header{
-    background-blend-mode: unset;
-} */
+app-header{
+    background: transparent;
+}
+
+
+
+
 
 
 

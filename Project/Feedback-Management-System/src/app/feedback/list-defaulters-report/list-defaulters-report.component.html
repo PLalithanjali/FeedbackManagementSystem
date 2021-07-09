@@ -1,0 +1,21 @@
+<div class="container">
+    <h2> All Feedbacks of a Trainer</h2>
+    <h2 class="bg-warning text-black">{{ myError }}</h2>
+
+    <div class="row">
+        <div class="card" style="width: 50%; height:50%;
+        object-fit: cover;" *ngFor="let feedback of allDefaulters">
+            <div class="card=title" style="font-size: large;">
+                {{ feedback.employee.employeeName }}
+            </div>
+            <div class="card-body">
+                <div>Feedback is not updated for Program-"<b>{{ feedback.program.programId}} - 
+                    {{feedback.program.course.courseName}}"</b></div>
+                
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+
+

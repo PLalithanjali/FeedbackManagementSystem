@@ -1,1 +1,28 @@
-<p>enroll-participant works!</p>
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header display-4">
+            <p>Enroll a Participant</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="enrollParticipant(feedback)">
+            <div class="card-body">
+                <div class="form-group" >
+                    <label for="program">Program:</label>
+                    <select class="form-control" id="program" name="program" [(ngModel)]="feedback.program.programId">
+                        <option *ngFor="let program of allPrograms">{{ program.programId }}</option>
+                    </select>
+                </div>
+                <div class="form-group" >
+                    <label for="participant">Trainer:</label>
+                    <select class="form-control" id="participant" name="participant" [(ngModel)]="feedback.employee.employeeName">
+                        <option *ngFor="let participant of allParticipants">{{ participant.employeeName }}</option>
+                    </select>
+                </div>
+            <div class="card-footer">
+                <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn
+                                                            btn-success">Enroll
+                    </button><br><br>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>

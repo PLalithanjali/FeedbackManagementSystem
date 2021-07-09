@@ -51,6 +51,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
+import { ListDefaultersReportComponent } from './feedback/list-defaulters-report/list-defaulters-report.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import {MatIconModule} from '@angular/material/icon';
     HomeTrainerComponent,
     HomeAdminComponent,
     DeleteTrainerComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListDefaultersReportComponent
   ],
   imports: [
     BrowserModule,

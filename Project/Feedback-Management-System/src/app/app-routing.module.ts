@@ -7,6 +7,7 @@ import { ListCourseComponent } from './course/list-course/list-course.component'
 import { UpdateCourseComponent } from './course/update-course/update-course.component';
 import { ViewCourseComponent } from './course/view-course/view-course.component';
 import { HomeFeedbackComponent } from './feedback/home-feedback/home-feedback.component';
+import { ListDefaultersReportComponent } from './feedback/list-defaulters-report/list-defaulters-report.component';
 import { UpdateFeedbackComponent } from './feedback/update-feedback/update-feedback.component';
 import { ViewProgramFeedbackComponent } from './feedback/view-program-feedback/view-program-feedback.component';
 import { ViewTrainerFeedbackComponent } from './feedback/view-trainer-feedback/view-trainer-feedback.component';
@@ -71,7 +72,8 @@ const routes: Routes = [
   { path:'delete-skill', component: DeleteSkillComponent },
   { path:'list-skill', component: ListSkillComponent },
   { path:'list-program-feedback', component: ViewProgramFeedbackComponent },
-  { path:'list-trainer-feedback', component: ViewTrainerFeedbackComponent }
+  { path:'list-trainer-feedback', component: ViewTrainerFeedbackComponent },
+  { path:'list-default-report', component: ListDefaultersReportComponent }
 ];
 
 @NgModule({

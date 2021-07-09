@@ -49,7 +49,7 @@ export class ParticipantService {
 
   enrollParticipant(newFeedback: Feedback): Observable<Feedback>{
     console.log(newFeedback);
-    return this.http.put<Feedback>("http://localhost:8080/participant/enroll-participant",newFeedback, this.getHttpOptions());
+    return this.http.post<Feedback>("http://localhost:8080/participant/enroll-participant",newFeedback, this.getHttpOptions());
   
   }
 }

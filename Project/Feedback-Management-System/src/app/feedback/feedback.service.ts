@@ -44,7 +44,7 @@ export class FeedbackService {
 
   getFeedbackByTrainer(trainerId: number): Observable<Feedback[]>{
     console.log(trainerId);
-    return this.http.delete<Feedback[]>("http://localhost:8080/feedback/feedback-report-trainer/"+trainerId, this.getHttpOptions());
+    return this.http.get<Feedback[]>("http://localhost:8080/feedback/feedback-report-trainer/"+trainerId, this.getHttpOptions());
   
   }
 

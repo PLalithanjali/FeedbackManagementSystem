@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Trainer } from 'src/app/trainer/trainer';
+import { TrainerService } from 'src/app/trainer/trainer.service';
 import { Feedback } from '../feedback';
 import { FeedbackService } from '../feedback.service';
 
@@ -9,19 +11,42 @@ import { FeedbackService } from '../feedback.service';
 })
 export class ViewTrainerFeedbackComponent implements OnInit {
 
-  constructor(private feedbackService: FeedbackService) { }
+  constructor(private feedbackService: FeedbackService, private trainerService: TrainerService) { }
 
-  ngOnInit(): void {
+  show=true;
+  myError: any='';
+  allTrainers: Trainer[]=[];
+  trainer: Trainer={
+    trainerId: 0,
+      trainerName: ''
   }
 
-  myError:any=''
+  ngOnInit(): void {
+    this.trainerService.getAllTrainers().subscribe((response) => {
+      console.log(response);
+      this.allTrainers = response;
+    },
+    (error) => {
+      console.log(error.error.message);
+      this.allTrainers = [];
+      this.myError = error.error.message;
+    });
+  }
  allFeedbacks: Feedback[] = [];
+ i=0;
 
- getFeedbackByTrainer(programId: number){
-    return this.feedbackService.getFeedbackByTrainer(programId).subscribe((response) => {
+ getFeedbackByTrainer(){
+  for(this.i=0;this.i<this.allTrainers.length;this.i++){
+    if(this.allTrainers[this.i].trainerName == this.trainer.trainerName){
+      this.trainer={...this.allTrainers[this.i]}
+      break;
+    }
+  }
+   this.myError='';
+    return this.feedbackService.getFeedbackByTrainer(this.trainer.trainerId).subscribe((response) => {
       console.log(response);
       this.allFeedbacks = response;
-      
+      this.show=false;
     },
     (error) => {
       console.log(error.error.message);

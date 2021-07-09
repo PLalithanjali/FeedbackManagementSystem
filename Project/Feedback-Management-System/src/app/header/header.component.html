@@ -1,47 +1,13 @@
-<!-- <div class="container-fluid">
-  <nav class="navbar  navbar-expand-sm" style="background-color: rgb(200, 250, 202);">
-      <ul class="navbar-nav" style="font-size: larger; position: relative;">
-        <li class="nav-item ">
-          <a class="nav-link" *ngIf = "getUser() == null"
-          routerLink="header-home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "getUser() == null"
-          routerLink="login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "getRole() == 'admin' && getUser() != null"
-          routerLink="course">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "getRole() == 'admin' && getUser() != null" 
-          routerLink="trainer">Trainers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "(getRole() == 'admin'||getRole() == 'coordinator') && getUser() != null" 
-          routerLink="program">Programs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "getUser() != null"
-          routerLink="feedback">Feedbacks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "getRole() == 'admin' && getUser() != null"
-          routerLink="skill">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf = "getUser() != null"
-          routerLink="logout">Logout</a>
-        </li>
-      </ul>
-  </nav>
-</div> -->
-
 <mat-toolbar class="navbar" >
     <nav class="navbar  navbar-expand-sm" >
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn4.iconfinder.com/data/icons/contact-us-set-1-1/64/x-04-3-512.png" alt="logo" style="width: 50px;height:50px;">
+      </a>
       <ul class="navbar-nav" style="font-size: larger; position: relative;">
         <li class="nav-item ">
-          <mat-icon *ngIf="getUser() != null" (click)="inputSideNav.toggle()">list</mat-icon>
+          <button mat-flat-button class="btn btn-basic" *ngIf="getUser() != null" (click)="inputSideNav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
         </li>
         <li class="nav-item ">
           <a class="nav-link" *ngIf="getUser() == null" routerLink="header-home">Home</a>
