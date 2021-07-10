@@ -1,0 +1,16 @@
+
+mat-toolbar{
+    background: transparent;
+}
+mat-toolbar nav ul li a{
+  font-style: unset;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(4, 34, 167);
+  position: relative;
+  text-align: justify;
+}
+.btn{
+  font-size: 1.5rem;
+    line-height: 1.8;
+    
+}

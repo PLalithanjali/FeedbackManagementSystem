@@ -1,0 +1,22 @@
+mat-sidenav{
+    background: rgba(85, 169, 218, 0.521);
+    width: 200px;
+    text-align: center;
+    color:black;
+}
+mat-sidenav-container{
+    background: transparent;
+}
+
+app-header{
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+

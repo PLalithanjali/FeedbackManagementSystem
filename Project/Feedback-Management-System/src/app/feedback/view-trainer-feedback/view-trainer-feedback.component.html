@@ -1,0 +1,36 @@
+<div class="container">
+    <h2> All Feedbacks of a Trainer</h2>
+    <h2 class="bg-warning text-black">{{ myError }}</h2>
+    <div class="form-group" >
+        <label for="trainer">Trainer:</label>
+        <select class="form-control" id="trainer" name="trainer" [(ngModel)]="trainer.trainerName">
+            <option *ngFor="let trainer of allTrainers">{{trainer.trainerName}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+    <button id="btn2" type="submit" (click)="getFeedbackByTrainer()" class="btn btn-success">Submit
+        </button><br><br>
+</div>
+</div>
+<div class="container"[hidden] ="show">
+    <div class="row">
+        <div class="card" style="width: 50%; height:50%;
+        object-fit: cover;" *ngFor="let feedback of allFeedbacks">
+            <div class="card=title" style="font-size: large;">
+                {{ feedback.program.trainer.trainerName }}
+            </div>
+            <div class="card-body">
+                <div>{{ feedback.employee.employeeName }}</div>
+                <div>FeedbackCriteria1 : {{feedback.feedbackCriteria1}}</div>
+                <div>FeedbackCriteria2 : {{feedback.feedbackCriteria2}}</div>
+                <div>FeedbackCriteria3 : {{feedback.feedbackCriteria3}}</div>
+                <div>FeedbackCriteria4 : {{feedback.feedbackCriteria4}}</div>
+                <div>FeedbackCriteria5 : {{feedback.feedbackCriteria5}}</div>
+                <div>Comments : {{feedback.comments}}</div>
+                <div>Suggestions : {{feedback.suggestions}}</div>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+

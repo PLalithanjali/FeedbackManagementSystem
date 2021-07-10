@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="form-group" >
+        <label for="skill">Filter Trainers by Skill:</label>
+        <select class="form-control" id="skill" name="skill" [(ngModel)]="skill.skillName">
+            <option *ngFor="let skill of allSkills">{{ skill.skillName }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+    <button id="btn2" type="submit" (click)="getTrainersBySkill(skill.skillName)" class="btn btn-success">Submit
+        </button><br><br>
+</div>
+</div>
+<div [hidden]="!show" class="container" style="justify-content: center;">
+
+    <div class="row" >
+        <div class="table" *ngFor="let skill of allSkills">
+            <div >
+                <tr>
+                    <td>{{skill.skillName}}</td>
+                </tr>
+            </div>
+        </div>
+    </div>
+</div>
+<div [hidden]="show" class="container" style="justify-content: center;">
+
+    <div class="row" >
+        <div class="table" *ngFor="let skillset of allTrainers">
+                <tr>
+                    <td>{{skillset.trainer.trainerName}}</td>
+                </tr>
+            <button id="btn2" type="submit" (click)="toggle()" class="btn btn-primary">Clear
+            </button>
+        </div>
+    </div>
+</div>

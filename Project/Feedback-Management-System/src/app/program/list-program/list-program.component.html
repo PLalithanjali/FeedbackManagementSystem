@@ -1,0 +1,18 @@
+<div class="container">
+    <h2> All Programs</h2>
+    <h2 class="bg-warning text-black">{{ myError }}</h2>
+
+    <div class="row">
+        <div class="card" style="width: 33%; height:33%;
+        object-fit: cover;" *ngFor="let program of allPrograms">
+            <div class="card-title">
+                {{ program.programId }}
+            </div>
+            <div class="card-body">
+                <div>Duration: {{ program.startDate }} - {{ program.endDate }}</div>
+                <div>Course: {{ program.course.courseName }}</div>
+                <div>Trainer: {{ program.trainer.trainerName }}</div>
+            </div>
+        </div>
+    </div>
+</div><br><br>

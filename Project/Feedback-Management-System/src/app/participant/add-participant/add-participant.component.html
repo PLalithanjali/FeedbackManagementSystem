@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header display-4">
+            <p>Add Participant</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="addParticipant(participant)">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="role">Role: </label>
+                    <input type="radio"  id="admin" name="role" value="admin" [(ngModel)]="participant.employeeRole"/>
+                    <label for="admin">Admin</label>
+                    <input type="radio"  id="coordinator" name="role" value="coordinator" [(ngModel)]="participant.employeeRole"/>
+                    <label for="coordinator">Co-ordinator</label>
+                    <input type="radio"  id="participant" name="role" value="participant" [(ngModel)]="participant.employeeRole"/>
+                    <label for="participant">Participant</label>
+                </div>
+                <div class="form-group">
+                    <label for="username">UserName:</label>
+                    <input type="text" class="form-control mx-2" id="username" [(ngModel)]="participant.employeeName"
+                        name="username" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="text" class="form-control mx-2" id="password" [(ngModel)]="participant.employeePassword"
+                        name="password" placeholder="Enter Password">
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add Participant
+                </button><br><br>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+

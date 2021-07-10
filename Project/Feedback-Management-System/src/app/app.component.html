@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <app-header [inputSideNav] = "sidenav"></app-header>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="side">
+            <app-sidebar></app-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

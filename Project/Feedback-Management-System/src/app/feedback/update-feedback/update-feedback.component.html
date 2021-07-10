@@ -1,0 +1,84 @@
+<div class="container">
+        <div class="form-group" >
+            <label for="employee">Employee:</label>
+            <select class="form-control" id="employee" name="employee" [(ngModel)]="feedback.employee.employeeName">
+                <option *ngFor="let participant of allParticipants">{{ participant.employeeName }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+        <button id="btn2" type="submit" (click)="getFeedback()" class="btn btn-success">Submit
+            </button><br><br>
+    </div>
+</div>
+
+<div class="container" [hidden] = "show" *ngFor="let feedback of allEmpFeedbacks">
+    <div class="card mt-4">
+        <div class="card-header display-4">
+            <p>Update Feedback</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="updateFeedback(feedback)">
+            <div class="card-body">
+                <div class="form-group" >
+                    <label for="employee">Employee:</label>
+                    <input type="text" class="form-control mx-2" id="employee" name="employee" [(ngModel)]="feedback.employee.employeeName"
+                    [value]="feedback.employee.employeeName">
+                </div>
+                <div class="form-group" >
+                    <label for="program">Program:</label>
+                    <input type="text" class="form-control mx-2" id="program" name="program" [(ngModel)]="feedback.program.programId"
+                    [value]="feedback.program.programId">
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackcriteria1">Feedback Criteria 1</label>
+                    <input type="text" class="form-control mx-2" id="feedbackcriteria1" [(ngModel)]="feedback.feedbackCriteria1"
+                        name="feedbackcriteria1" placeholder="Rate it from 1-10">
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackcriteria2">Feedback Criteria 2</label>
+                    <input type="text" class="form-control mx-2" id="feedbackcriteria2" [(ngModel)]="feedback.feedbackCriteria2"
+                        name="feedbackcriteria2" placeholder="Rate it from 1-10">
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackcriteria3">Feedback Criteria 3</label>
+                    <input type="text" class="form-control mx-2" id="feedbackcriteria3" [(ngModel)]="feedback.feedbackCriteria3"
+                        name="feedbackcriteria3" placeholder="Rate it from 1-10">
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackcriteria4">Feedback Criteria 4</label>
+                    <input type="text" class="form-control mx-2" id="feedbackcriteria4" [(ngModel)]="feedback.feedbackCriteria4"
+                        name="feedbackcriteria4" placeholder="Rate it from 1-10">
+                </div>
+
+                <div class="form-group">
+                    <label for="feedbackcriteria5">Feedback Criteria 5</label>
+                    <input type="text" class="form-control mx-2" id="feedbackcriteria5" [(ngModel)]="feedback.feedbackCriteria5"
+                        name="feedbackcriteria5" placeholder="Rate it from 1-10">
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <input type="text" class="form-control mx-2" id="comments" [(ngModel)]="feedback.comments"
+                        name="comments" placeholder="Enter your comments">
+                </div>
+
+                <div class="form-group">
+                    <label for="Suggestions">Suggestions</label>
+                    <input type="text" class="form-control mx-2" id="Suggestions" [(ngModel)]="feedback.suggestions"
+                        name="Suggestions" placeholder="Give any suggestions">
+                </div>
+
+
+            </div>
+            <div class="card-footer">
+                <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Update Feedback
+                </button><br><br>
+
+            </div>
+        </form>
+    </div>
+</div>
+
