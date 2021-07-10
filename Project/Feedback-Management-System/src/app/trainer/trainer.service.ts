@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from '../login/auth.service';
+import { Skill } from '../skill/skill';
+import { SkillSet } from '../trainer/skillset';
 import { Trainer } from './trainer';
 
 @Injectable({
@@ -51,6 +53,11 @@ export class TrainerService {
   deleteTrainer(newTrainer: Trainer): Observable<Trainer>{
     console.log(newTrainer.trainerId);
     return this.http.delete<Trainer>("http://localhost:8080/admin/trainer-management/delete-trainer/"+newTrainer.trainerId, this.getHttpOptions());
+  
+  }
+
+  addSkillsToTrainer(skillset: SkillSet): Observable<SkillSet>{
+    return this.http.post<SkillSet>("http://localhost:8080/skillset/add-skillset",skillset, this.getHttpOptions());
   
   }
 

@@ -1,7 +1,9 @@
 .container{
-    background: transparent;
+    background:transparent;
 }
-.card{
-    
-    background-color: rgb(255, 255, 255);
+/* .card{
+    background-color: rgba(255, 255, 255, 0.473);
+} */
+#admin, #participant, #coordinator{
+    margin-left: 10px;
 }

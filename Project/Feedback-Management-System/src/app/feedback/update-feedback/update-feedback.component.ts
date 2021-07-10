@@ -17,6 +17,7 @@ export class UpdateFeedbackComponent implements OnInit {
               private participantService: ParticipantService) { }
 
   ngOnInit(): void {
+    this.allEmpFeedbacks=[];
     this.programService.getAllPrograms().subscribe((response) => {
       console.log(response);
       this.allPrograms = response;
@@ -78,6 +79,10 @@ export class UpdateFeedbackComponent implements OnInit {
   }
   show=true;
 
+  getLength(){
+    return this.allEmpFeedbacks.length;
+  }
+
   getFeedback(){
     this.allEmpFeedbacks=[];
     this.feedbackService.getAllDefaulters().subscribe((response) => {
@@ -95,7 +100,7 @@ export class UpdateFeedbackComponent implements OnInit {
         this.allEmpFeedbacks.push(this.allDefaulters[this.i]);
       }
     }
-    this.show = !this.show;
+    this.show = false;
   }
 
   updateFeedback(newFeedback: Feedback){

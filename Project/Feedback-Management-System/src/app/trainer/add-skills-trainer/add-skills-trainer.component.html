@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header display-4">
+            <p>Add skills of Trainer</p>
+        </div>
+        <form #myForm="ngForm" (ngSubmit)="addSkillsToTrainer()">
+            <div class="card-body">
+                <div class="form-group" >
+                    <label for="trainer">Trainer Name:</label>
+                    <select class="form-control" id="trainer" name="trainer" [(ngModel)]="skillSet.trainer.trainerName">
+                        <option *ngFor="let trainer of allTrainers">{{ trainer.trainerName }}</option>
+                    </select>
+                </div>
+                <div class="form-group" >
+                    <label for="skills">Select Skills:</label>
+                    <div class="form-check" *ngFor="let skill of allSkills">
+                        <label class="form-check-label" for="skill{{skill.skillName}}">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="skill{{skill.skillName}}"
+                              [value]="skill.skillName"
+                              (click)="selected(skill)">
+                              {{skill.skillName}}
+                          </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add 
+                </button><br><br>
+
+            </div>
+        </form>
+    </div>
+</div>
+

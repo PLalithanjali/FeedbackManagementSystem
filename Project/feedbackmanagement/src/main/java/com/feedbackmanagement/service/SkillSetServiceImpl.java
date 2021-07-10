@@ -50,6 +50,7 @@ public class SkillSetServiceImpl implements SkillSetService {
 	@Override
 	public SkillSetPojo addSkillSet(SkillSetPojo skillSet) {
 		// TODO Auto-generated method stub
+		SkillSetEntity skillSetEntity = new SkillSetEntity();
 		BeanUtils.copyProperties(skillSet.getSkill(), skillEntity);
 		BeanUtils.copyProperties(skillSet.getTrainer(), trainerEntity);
 		skillSetEntity.setSkill(skillEntity);
@@ -64,6 +65,7 @@ public class SkillSetServiceImpl implements SkillSetService {
 
 	@Override
 	public SkillSetPojo updateSkillSet(SkillSetPojo skillSet) {
+		SkillSetEntity skillSetEntity = new SkillSetEntity();
 		BeanUtils.copyProperties(skillSet.getSkill(), skillEntity);
 		BeanUtils.copyProperties(skillSet.getTrainer(), trainerEntity);
 		BeanUtils.copyProperties(skillSet, skillSetEntity);
@@ -84,6 +86,7 @@ public class SkillSetServiceImpl implements SkillSetService {
 	@Override
 	public SkillSetPojo removeSkillSet(SkillSetPojo skillSet) {
 		// TODO Auto-generated method stub
+		SkillSetEntity skillSetEntity = new SkillSetEntity();
 		BeanUtils.copyProperties(skillSet, skillSetEntity);
 		Optional<SkillSetEntity> result = skillSetRepository.findById(skillSetEntity.getSkillSetId());
 		if(result.isEmpty()) {

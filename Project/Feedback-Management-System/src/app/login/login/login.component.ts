@@ -29,7 +29,15 @@ export class LoginComponent implements OnInit {
       console.log(response);
       this.authService.storeUserDetails(JSON.stringify(response));
       this.authService.setRole(this.user.employeeRole);
+      if(this.user.employeeRole == "admin"){
       this.router.navigate(['home-admin']);
+      }
+      else if(this.user.employeeRole == "coordinator"){
+        this.router.navigate(['home-coordinator']);
+      }
+      else{
+        this.router.navigate(['home-participant']);
+      }
     },
     (error) => {
       console.log(error.error.message);

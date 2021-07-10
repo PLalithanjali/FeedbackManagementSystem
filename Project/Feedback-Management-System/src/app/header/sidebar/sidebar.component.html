@@ -12,10 +12,10 @@
           <a class="nav-link" *ngIf="getActive() == 'course'"
           routerLink="delete-course">Delete Course</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" *ngIf="getActive() == 'course'"
           routerLink="view-course">Open a Course</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" *ngIf="getActive() == 'course'"
           routerLink="list-course">All Courses</a>
@@ -31,6 +31,10 @@
           <li class="nav-item">
             <a class="nav-link" *ngIf="getActive() == 'trainer'"
             routerLink="delete-trainer">Delete Trainer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="getActive() == 'trainer'"
+            routerLink="add-skill-trainer">Add skills to Trainer</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" *ngIf="getActive() == 'trainer'"

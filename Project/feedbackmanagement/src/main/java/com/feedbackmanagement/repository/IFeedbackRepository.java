@@ -11,7 +11,7 @@ import com.feedbackmanagement.entity.FeedbackEntity;
 @Repository
 public interface IFeedbackRepository extends JpaRepository<FeedbackEntity, Integer>{
 	
-	@Query(value = "select f.* from feedback f where f.program_id in (select p.program_id from program p where p.trainer_id = ?1)"
+	@Query(value = "select f.* from feedback f where f.program_id in (select p.program_id from program p where p.faculty = ?1)"
 			,nativeQuery = true)
 	List<FeedbackEntity> findAllByTrainerId(int trainerId);
 	

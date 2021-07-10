@@ -1,15 +1,19 @@
 mat-sidenav{
-    background: rgba(85, 169, 218, 0.521);
+    background: #e22e5e96;
     width: 200px;
     text-align: center;
     color:black;
+    height:597px;
 }
 mat-sidenav-container{
     background: transparent;
 }
+mat-sidenav-content{
+    background: transparent;
+}
 
 app-header{
-    background: transparent;
+    background-color: rgb(0, 0, 0);
 }
 
 

@@ -1,4 +1,6 @@
 <div class="container">
+    <h2> Update a feedback</h2>
+    <h2 class="bg-warning text-black">{{ myError }}</h2>
         <div class="form-group" >
             <label for="employee">Employee:</label>
             <select class="form-control" id="employee" name="employee" [(ngModel)]="feedback.employee.employeeName">
@@ -10,8 +12,8 @@
             </button><br><br>
     </div>
 </div>
-
-<div class="container" [hidden] = "show" *ngFor="let feedback of allEmpFeedbacks">
+<div class="container" [hidden] = "show" *ngIf= "getLength() != 0">
+<div  *ngFor="let feedback of allEmpFeedbacks">
     <div class="card mt-4">
         <div class="card-header display-4">
             <p>Update Feedback</p>
@@ -80,5 +82,10 @@
             </div>
         </form>
     </div>
+</div>
+
+<div class="container" *ngIf= "getLength() == 0">
+    <p>Feedbacks already given!!!</p>
+</div>
 </div>
 

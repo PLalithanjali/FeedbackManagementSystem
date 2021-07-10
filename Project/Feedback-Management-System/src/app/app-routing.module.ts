@@ -12,6 +12,8 @@ import { UpdateFeedbackComponent } from './feedback/update-feedback/update-feedb
 import { ViewProgramFeedbackComponent } from './feedback/view-program-feedback/view-program-feedback.component';
 import { ViewTrainerFeedbackComponent } from './feedback/view-trainer-feedback/view-trainer-feedback.component';
 import { HomeAdminComponent } from './login/home-admin/home-admin.component';
+import { HomeCoordinatorComponent } from './login/home-coordinator/home-coordinator.component';
+import { HomeParticipantComponent } from './login/home-participant/home-participant.component';
 import { HomeComponent } from './login/home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { LogoutComponent } from './login/logout/logout.component';
@@ -29,6 +31,7 @@ import { DeleteSkillComponent } from './skill/delete-skill/delete-skill.componen
 import { HomeSkillComponent } from './skill/home-skill/home-skill.component';
 import { ListSkillComponent } from './skill/list-skill/list-skill.component';
 import { UpdateSkillComponent } from './skill/update-skill/update-skill.component';
+import { AddSkillsTrainerComponent } from './trainer/add-skills-trainer/add-skills-trainer.component';
 import { AddTrainerComponent } from './trainer/add-trainer/add-trainer.component';
 import { DeleteTrainerComponent } from './trainer/delete-trainer/delete-trainer.component';
 import { HomeTrainerComponent } from './trainer/home-trainer/home-trainer.component';
@@ -40,7 +43,7 @@ const routes: Routes = [
   { path:'list-course', component: ListCourseComponent },
   { path:'login', component: LoginComponent },
   { path:'logout', component: LogoutComponent },
-  { path:'header-home', component: HomeComponent },
+  { path:'home', component: HomeComponent },
   { path:'course', component: HomeCourseComponent },
   { path:'trainer', component: HomeTrainerComponent },
   { path:'feedback', component: HomeFeedbackComponent },
@@ -53,7 +56,10 @@ const routes: Routes = [
   { path:'delete-course', component: DeleteCourseComponent },
   { path:'view-course', component: ViewCourseComponent },
   { path:'home-admin', component: HomeAdminComponent },
+  { path:'home-coordinator', component: HomeCoordinatorComponent },
+  { path:'home-participant', component: HomeParticipantComponent },
   { path:'add-trainer', component: AddTrainerComponent },
+  { path:'add-skill-trainer', component: AddSkillsTrainerComponent },
   { path:'update-trainer', component: UpdateTrainerComponent },
   { path:'list-trainer', component: ListTrainerComponent },
   { path:'delete-trainer', component: DeleteTrainerComponent },

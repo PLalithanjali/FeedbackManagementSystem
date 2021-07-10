@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/login/auth.service';
 
 @Component({
@@ -8,12 +9,11 @@ import { AuthService } from 'src/app/login/auth.service';
 })
 export class HomeFeedbackComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   activeComponent: string='feedback';
   
   ngOnInit(): void {
     this.authService.setActive(this.activeComponent);
   }
-
 }

@@ -6,11 +6,11 @@
         <form #myForm="ngForm" (ngSubmit)="login()">
             <div class="card-body">
                 <div class="form-group">
-                    <label for="role">Role: </label>
+                    <label for="role">Role: </label><br>
                     <input type="radio"  id="admin" name="role" value="admin" [(ngModel)]="user.employeeRole"/>
-                    <label for="admin">Admin</label>
+                    <label for="admin">Admin</label><br>
                     <input type="radio"  id="coordinator" name="role" value="coordinator" [(ngModel)]="user.employeeRole"/>
-                    <label for="coordinator">Co-ordinator</label>
+                    <label for="coordinator">Co-ordinator</label><br>
                     <input type="radio"  id="participant" name="role" value="participant" [(ngModel)]="user.employeeRole"/>
                     <label for="participant">Participant</label>
                 </div>

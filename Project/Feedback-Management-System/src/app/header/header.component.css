@@ -1,16 +1,46 @@
 
-mat-toolbar{
-    background: transparent;
-}
-mat-toolbar nav ul li a{
-  font-style: unset;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: rgb(4, 34, 167);
-  position: relative;
-  text-align: justify;
-}
 .btn{
-  font-size: 1.5rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.2;
+    padding: .75rem .75rem;
+    color:ghostwhite;
     
 }
+a:hover{
+  background-color: rgba(255, 255, 255, 0.151);
+  
+}
+.btn:hover{
+  background-color: rgba(250, 250, 250, 0.26);
+    
+}
+
+ul li a {
+  float: right;
+  font-weight:bolder;
+  font-family: sans-serif;
+	text-align: center;
+  color: #ffffff;
+}
+
+.navbar b{
+  font-family: sans-serif;
+  color: rgb(47, 255, 6);
+  font-size: larger;
+}
+
+.navbar-brand a{
+  font-family: sans-serif;
+  color: rgb(6, 197, 255);
+  font-size: larger;
+  position: relative;
+}
+
+.navbar{
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar-toggler{
+  background-color:#710a2d;
+}
+

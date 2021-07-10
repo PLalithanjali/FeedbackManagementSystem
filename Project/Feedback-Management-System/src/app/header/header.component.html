@@ -1,29 +1,33 @@
-<mat-toolbar class="navbar" >
-    <nav class="navbar  navbar-expand-sm" >
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn4.iconfinder.com/data/icons/contact-us-set-1-1/64/x-04-3-512.png" alt="logo" style="width: 50px;height:50px;">
-      </a>
-      <ul class="navbar-nav" style="font-size: larger; position: relative;">
-        <li class="nav-item ">
-          <button mat-flat-button class="btn btn-basic" *ngIf="getUser() != null" (click)="inputSideNav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" *ngIf="getUser() == null" routerLink="header-home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="getUser() == null" routerLink="login">Login</a>
-        </li>
+
+  <nav class="navbar  navbar-expand-sm">
+     <button mat-flat-button class="btn btn-basic" *ngIf="getUser() != null" (click)="inputSideNav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button> 
+    <a class="navbar-brand" routerLink="home">
+      F e e d <b>BACK</b>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto" style="font-size: larger; position: relative;">
+        <button mat-flat-button class="btn btn-basic" *ngIf="getUser() == null" routerLink="home">
+          <mat-icon>home</mat-icon>
+        </button>
         <li class="nav-item">
           <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="course">Courses</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="trainer">Trainers</a>
-        </li> 
+        </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="participant">Participants</a>
-        </li>       
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null"
+            routerLink="participant">Participants</a>
+        </li>
+        <button mat-flat-button class="btn btn-basic" *ngIf="getUser() == null" routerLink="login">
+          <mat-icon>login</mat-icon>
+        </button>
         <li class="nav-item">
           <a class="nav-link" *ngIf="(getRole() == 'admin'||getRole() == 'coordinator') && getUser() != null"
             routerLink="program">Programs</a>
@@ -34,10 +38,9 @@
         <li class="nav-item">
           <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="skill">Skills</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="getUser() != null" (click)="inputSideNav.close()"routerLink="logout">Logout</a>
-        </li>
+        <button mat-flat-button class="btn btn-basic" *ngIf="getUser() != null" (click)="inputSideNav.close()" routerLink="logout">
+          <mat-icon>logout</mat-icon>
+        </button>
       </ul>
-    </nav>
-</mat-toolbar>
-
+    </div>
+  </nav>

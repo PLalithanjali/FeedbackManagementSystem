@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from '../login/auth.service';
+import { SkillSet } from '../trainer/skillset';
 import { Skill } from './skill';
-import { SkillSet } from './skillSet';
+
 
 @Injectable({
   providedIn: 'root'

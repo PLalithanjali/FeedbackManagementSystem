@@ -52,6 +52,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
 import { ListDefaultersReportComponent } from './feedback/list-defaulters-report/list-defaulters-report.component';
+import { HomeParticipantComponent } from './login/home-participant/home-participant.component';
+import { HomeCoordinatorComponent } from './login/home-coordinator/home-coordinator.component';
+import { AddSkillsTrainerComponent } from './trainer/add-skills-trainer/add-skills-trainer.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +96,10 @@ import { ListDefaultersReportComponent } from './feedback/list-defaulters-report
     HomeAdminComponent,
     DeleteTrainerComponent,
     SidebarComponent,
-    ListDefaultersReportComponent
+    ListDefaultersReportComponent,
+    HomeParticipantComponent,
+    HomeCoordinatorComponent,
+    AddSkillsTrainerComponent
   ],
   imports: [
     BrowserModule,

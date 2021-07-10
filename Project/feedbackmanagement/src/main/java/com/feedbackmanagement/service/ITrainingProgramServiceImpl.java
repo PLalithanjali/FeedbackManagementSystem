@@ -38,7 +38,7 @@ public class ITrainingProgramServiceImpl implements ITrainingProgramService{
 	@Override
 	public ProgramPojo createProgram(ProgramPojo program) {
 		// TODO Auto-generated method stub
-		
+		ProgramEntity programEntity = new ProgramEntity();
 		BeanUtils.copyProperties(program.getCourse(), courseEntity);
 		BeanUtils.copyProperties(program.getTrainer(), trainerEntity);
 		programEntity.setCourse(courseEntity);
