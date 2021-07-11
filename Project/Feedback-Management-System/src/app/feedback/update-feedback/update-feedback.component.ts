@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/login/auth.service';
 import { Employee } from 'src/app/participant/participant';
 import { ParticipantService } from 'src/app/participant/participant.service';
 import { Program } from 'src/app/program/program';
@@ -14,7 +15,8 @@ import { FeedbackService } from '../feedback.service';
 export class UpdateFeedbackComponent implements OnInit {
 
   constructor(private feedbackService: FeedbackService, private programService: ProgramService,
-              private participantService: ParticipantService) { }
+              private participantService: ParticipantService,
+                private authService: AuthService) { }
 
   ngOnInit(): void {
     this.allEmpFeedbacks=[];
@@ -37,7 +39,19 @@ export class UpdateFeedbackComponent implements OnInit {
       console.log(error.error.message);
       this.myError = error.error.message;
     });
+
+    let user: any='';
+    user = this.authService.retrieveUserDetails();
+    if(user!=null){
+    let ename = JSON.parse(user).user.employeeName;
+    console.log("name: "+ename);
+    this.employeeName = ename;
+    console.log("Employeename: "+this.employeeName);
+    }
+    this.getFeedback();
+
   }
+  employeeName:String='';
   allDefaulters: Feedback[]=[];
   allEmpFeedbacks: Feedback[]=[];
   allPrograms: Program[]=[];
@@ -78,34 +92,29 @@ export class UpdateFeedbackComponent implements OnInit {
     suggestions: ''
   }
   show=true;
-
-  getLength(){
-    return this.allEmpFeedbacks.length;
-  }
+  length=0;
 
   getFeedback(){
-    this.allEmpFeedbacks=[];
     this.feedbackService.getAllDefaulters().subscribe((response) => {
       console.log(response);
       this.allDefaulters = response;
-      
+      for(this.i=0;this.i<this.allDefaulters.length;this.i++){
+        if(this.allDefaulters[this.i].employee.employeeName == this.employeeName){
+          this.allEmpFeedbacks.push(this.allDefaulters[this.i]);
+        }
+      }
+      this.length=this.allEmpFeedbacks.length;
+      console.log("emp"+this.allEmpFeedbacks);
     },
     (error) => {
       console.log(error.error.message);
       this.myError = error.error.message;
     });
-    console.log(this.feedback.employee.employeeName);
-    for(this.i=0;this.i<this.allDefaulters.length;this.i++){
-      if(this.allDefaulters[this.i].employee.employeeName == this.feedback.employee.employeeName){
-        this.allEmpFeedbacks.push(this.allDefaulters[this.i]);
-      }
-    }
-    this.show = false;
   }
 
   updateFeedback(newFeedback: Feedback){
     for(this.i=0;this.i<this.allParticipants.length;this.i++){
-      if(this.allParticipants[this.i].employeeName == newFeedback.employee.employeeName){
+      if(this.allParticipants[this.i].employeeName == this.employeeName){
         newFeedback.employee={...this.allParticipants[this.i]}
         break;
       }
@@ -125,10 +134,6 @@ export class UpdateFeedbackComponent implements OnInit {
       console.log(error.error.message);
       this.myError = error.error.message;
     });
-  }
-
-  toggle(){
-    this.show = !this.show;
   }
 
 

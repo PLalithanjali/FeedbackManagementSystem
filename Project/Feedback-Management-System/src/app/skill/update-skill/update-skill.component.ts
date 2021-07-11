@@ -32,7 +32,6 @@ export class UpdateSkillComponent implements OnInit {
   }
 
   updateSkill(newSkill:Skill){
-    newSkill = this.skill;
     return this.skillService.updateSkill(newSkill).subscribe((response) => {
       console.log(response);
       this.skill = response;

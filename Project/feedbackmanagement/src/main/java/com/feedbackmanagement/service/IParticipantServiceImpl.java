@@ -38,10 +38,11 @@ public class IParticipantServiceImpl implements IParticipantService{
 	EmployeeEntity employeeEntity = new EmployeeEntity();
 	ProgramEntity programEntity = new ProgramEntity();
 	CourseEntity courseEntity = new CourseEntity();
-	FeedbackEntity feedbackEntity  = new FeedbackEntity();
+	
 
 	@Override
 	public FeedbackPojo enrollParticipant(FeedbackPojo feedbackPojo) {
+		FeedbackEntity feedbackEntity  = new FeedbackEntity();
 		// TODO Auto-generated method stub
 		BeanUtils.copyProperties(feedbackPojo.getEmployee(),employeeEntity);
 		BeanUtils.copyProperties(feedbackPojo.getProgram(),programEntity);

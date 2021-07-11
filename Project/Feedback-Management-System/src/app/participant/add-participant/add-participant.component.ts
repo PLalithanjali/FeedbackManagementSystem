@@ -24,7 +24,7 @@ export class AddParticipantComponent implements OnInit {
   }
 
   addParticipant(newParticipant: Employee){
-    return this.loginService.login(newParticipant).subscribe((response) => {
+    return this.loginService.register(newParticipant).subscribe((response) => {
       console.log(response);
       this.participant = response;
       
@@ -34,9 +34,4 @@ export class AddParticipantComponent implements OnInit {
       this.myError = error.error.message;
     });
   }
-
-
-
-
-
 }

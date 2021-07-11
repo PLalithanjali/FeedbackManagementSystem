@@ -26,10 +26,9 @@
 
     <div class="row" >
         <div class="card col-sm-12 col-md-6 col-lg-4" *ngFor="let skillset of allTrainers">
-            <div class="card-body">{{skillset.trainer.trainerName}}
-</div>
-            <button id="btn2" type="submit" (click)="toggle()" class="btn btn-primary">Clear
-            </button>
+            <div class="card-body">{{skillset.trainer.trainerName}}</div>    
         </div>
     </div>
+    <button id="btn2" type="submit" (click)="toggle()" class="btn btn-primary">Clear
+    </button>
 </div>

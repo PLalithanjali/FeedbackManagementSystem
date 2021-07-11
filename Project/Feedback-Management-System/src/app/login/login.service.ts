@@ -13,4 +13,8 @@ export class LoginService {
   login(newUser: Employee): Observable<Employee> {
     return this.http.post<Employee>("http://localhost:8080/authenticate",newUser);
   }
+
+  register(newUser: Employee): Observable<Employee> {
+    return this.http.post<Employee>("http://localhost:8080/register",newUser);
+  }
 }
