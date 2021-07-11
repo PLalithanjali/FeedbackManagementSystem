@@ -3,8 +3,9 @@
     <h2 class="bg-warning text-black">{{ myError }}</h2>
 
     <div class="row">
-        <div class="card" style="width: 33%; height:33%;
-        object-fit: cover;" *ngFor="let program of allPrograms">
+        <div class="card col-sm-12 col-md-6 col-lg-4" 
+        [ngStyle]="{'background-color': program.removed === 0 ? 'rgba(5, 196, 15, 0.445)' : 'rgba(177, 5, 5, 0.445)' }"
+        *ngFor="let program of allPrograms">
             <div class="card-title">
                 {{ program.programId }}
             </div>

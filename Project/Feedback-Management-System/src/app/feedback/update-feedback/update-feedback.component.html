@@ -22,57 +22,83 @@
             <div class="card-body">
                 <div class="form-group" >
                     <label for="employee">Employee:</label>
-                    <input type="text" class="form-control mx-2" id="employee" name="employee" [(ngModel)]="feedback.employee.employeeName"
+                    <input type="text" class="form-control mx-2" id="employee" name="employee" 
+                    required
+                            minlength="3"
+                            maxlength="15"
+                            #name = "ngModel"[(ngModel)]="feedback.employee.employeeName"
                     [value]="feedback.employee.employeeName">
                 </div>
+                <span *ngIf="name.errors?.required && name.touched" class="text-danger small">
+                    Employee Name is Mandatory!!!
+                </span>
+                <span *ngIf="(name.errors?.minlength) && name.touched" class="text-danger small">
+                    Employee Name must contain minimum 3 characters!!!
+                </span>
                 <div class="form-group" >
                     <label for="program">Program:</label>
-                    <input type="text" class="form-control mx-2" id="program" name="program" [(ngModel)]="feedback.program.programId"
+                    <input type="text" class="form-control mx-2" #program = "ngModel" required id="program" name="program" [(ngModel)]="feedback.program.programId"
                     [value]="feedback.program.programId">
                 </div>
-
+                <span *ngIf="program.errors?.required && name.touched" class="text-danger small">
+                    Program Id is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="feedbackcriteria1">Feedback Criteria 1</label>
                     <input type="text" class="form-control mx-2" id="feedbackcriteria1" [(ngModel)]="feedback.feedbackCriteria1"
-                        name="feedbackcriteria1" placeholder="Rate it from 1-10">
+                        name="feedbackcriteria1" #fc1 = "ngModel" required placeholder="Rate it from 1-10">
                 </div>
-
+                <span *ngIf="fc1.errors?.required && fc1.touched" class="text-danger small">
+                    Field is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="feedbackcriteria2">Feedback Criteria 2</label>
                     <input type="text" class="form-control mx-2" id="feedbackcriteria2" [(ngModel)]="feedback.feedbackCriteria2"
-                        name="feedbackcriteria2" placeholder="Rate it from 1-10">
+                        name="feedbackcriteria2" #fc2 = "ngModel" required placeholder="Rate it from 1-10">
                 </div>
-
+                <span *ngIf="fc2.errors?.required && fc2.touched" class="text-danger small">
+                    Field is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="feedbackcriteria3">Feedback Criteria 3</label>
                     <input type="text" class="form-control mx-2" id="feedbackcriteria3" [(ngModel)]="feedback.feedbackCriteria3"
-                        name="feedbackcriteria3" placeholder="Rate it from 1-10">
+                        name="feedbackcriteria3" #fc3 = "ngModel" required placeholder="Rate it from 1-10">
                 </div>
-
+                <span *ngIf="fc3.errors?.required && fc3.touched" class="text-danger small">
+                    Field is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="feedbackcriteria4">Feedback Criteria 4</label>
                     <input type="text" class="form-control mx-2" id="feedbackcriteria4" [(ngModel)]="feedback.feedbackCriteria4"
-                        name="feedbackcriteria4" placeholder="Rate it from 1-10">
+                        name="feedbackcriteria4" #fc4 = "ngModel" required placeholder="Rate it from 1-10">
                 </div>
-
+                <span *ngIf="fc4.errors?.required && fc4.touched" class="text-danger small">
+                    Field is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="feedbackcriteria5">Feedback Criteria 5</label>
                     <input type="text" class="form-control mx-2" id="feedbackcriteria5" [(ngModel)]="feedback.feedbackCriteria5"
-                        name="feedbackcriteria5" placeholder="Rate it from 1-10">
+                        name="feedbackcriteria5" #fc5 = "ngModel" required placeholder="Rate it from 1-10">
                 </div>
-
+                <span *ngIf="fc5.errors?.required && fc5.touched" class="text-danger small">
+                    Field is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="comments">Comments</label>
                     <input type="text" class="form-control mx-2" id="comments" [(ngModel)]="feedback.comments"
-                        name="comments" placeholder="Enter your comments">
+                        name="comments" #comment = "ngModel" required placeholder="Enter your comments">
                 </div>
-
+                <span *ngIf="comment.errors?.required && comment.touched" class="text-danger small">
+                    Give comments or N/A !!!
+                </span>
                 <div class="form-group">
                     <label for="Suggestions">Suggestions</label>
                     <input type="text" class="form-control mx-2" id="Suggestions" [(ngModel)]="feedback.suggestions"
-                        name="Suggestions" placeholder="Give any suggestions">
+                        name="Suggestions" #sugg = "ngModel" required placeholder="Give any suggestions">
                 </div>
-
+                <span *ngIf="sugg.errors?.required && sugg.touched" class="text-danger small">
+                    Give suggestions or N/A !!!
+                </span>
 
             </div>
             <div class="card-footer">

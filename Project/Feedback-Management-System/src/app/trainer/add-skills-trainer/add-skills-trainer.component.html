@@ -11,6 +11,7 @@
                         <option *ngFor="let trainer of allTrainers">{{ trainer.trainerName }}</option>
                     </select>
                 </div>
+
                 <div class="form-group" >
                     <label for="skills">Select Skills:</label>
                     <div class="form-check" *ngFor="let skill of allSkills">
@@ -20,12 +21,15 @@
                               type="checkbox"
                               id="skill{{skill.skillName}}"
                               [value]="skill.skillName"
+                              
                               (click)="selected(skill)">
                               {{skill.skillName}}
                           </label>
                     </div>
+                    
                 </div>
             </div>
+            
             <div class="card-footer">
                 <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add 
                 </button><br><br>

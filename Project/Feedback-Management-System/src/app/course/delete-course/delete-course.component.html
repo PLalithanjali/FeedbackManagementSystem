@@ -1,6 +1,6 @@
 <div class="container">
     <div>
-        <h2>Update a Course</h2>
+        <h2>Delete a Course</h2>
         <h2>{{ myError }}</h2>
     </div>
     <div class="card" *ngFor="let course of allCourses">
@@ -8,7 +8,7 @@
             <div>
                 <tr class="d-flex justify-content-between">
                     <td>{{course.courseName}}</td>
-                    <td><button type="button" class="btn btn bg-danger" (click)="toggle()">Delete</button></td>
+                    <td><button type="button" class="btn btn bg-danger" [hidden]="!show" (click)="toggle()">Delete</button></td>
                 </tr>
             <form [hidden]="show"(ngSubmit)="deleteCourse(course)">
                 <div class="form-group">

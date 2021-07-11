@@ -8,9 +8,9 @@
             <div>
                 <tr class="d-flex justify-content-between">
                     <td>{{trainer.trainerName}}</td>
-                    <td><button type="button" class="btn btn bg-danger" (click)="toggle()">Delete</button></td>
+                    <td><button type="button" class="btn btn bg-danger" [hidden]="!show" (click)="toggle()">Delete</button></td>
                 </tr>
-            <form [hidden]="show"(ngSubmit)="deleteTrainer(trainer)">
+            <form [hidden]="show" (ngSubmit)="deleteTrainer(trainer)">
                 <div class="form-group">
                     <label for="trainerId">Trainer Id:</label>
                     <input type="text" class="form-control mx-2" id="trainerId" [(ngModel)]="trainer.trainerId"

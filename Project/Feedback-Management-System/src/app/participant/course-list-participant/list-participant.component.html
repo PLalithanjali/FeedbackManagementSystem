@@ -9,7 +9,7 @@
             <label for="course">Filter Participants by Course:</label>
             <select class="form-control" id="course" name="course" [(ngModel)]="course.courseName">
                 <option *ngFor="let course of allCourses">{{ course.courseName }}</option>
-            </select><br>
+            </select><br><br>
                 <button id="btn2" type="submit" (click)="getAllParticipantsBycourse()" class="btn btn-success">Submit
                 </button>
              </div>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="container" [hidden]="show" >
-        <div class="card" *ngFor="let participant of allParticipants">
+        <div class="card col-sm-12 col-md-6 col-lg-4" *ngFor="let participant of allParticipants">
             <div class="card-body">Name: {{ participant.employeeName }} </div>
         </div>
     </div>

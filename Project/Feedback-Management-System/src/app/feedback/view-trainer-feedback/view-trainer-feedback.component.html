@@ -14,8 +14,7 @@
 </div>
 <div class="container"[hidden] ="show">
     <div class="row">
-        <div class="card" style="width: 50%; height:50%;
-        object-fit: cover;" *ngFor="let feedback of allFeedbacks">
+        <div class="card col-sm-12 col-md-12 col-lg-6"  *ngFor="let feedback of allFeedbacks">
             <div class="card=title" style="font-size: large;">
                 {{ feedback.program.trainer.trainerName }}
             </div>

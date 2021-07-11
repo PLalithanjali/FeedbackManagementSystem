@@ -8,10 +8,13 @@
                 <div class="form-group">
                     <label for="trainerName">TrainerName</label>
                     <input type="text" class="form-control mx-2" id="trainerName" [(ngModel)]="trainer.trainerName"
-                        name="trainerName" placeholder="Enter Trainer Name">
+                        name="trainerName" required #name="ngModel" placeholder="Enter Trainer Name">
                 </div>
 
             </div>
+            <span *ngIf="name.errors?.required && name.touched" class="text-danger small">
+                Trainer Name is Mandatory!!!
+            </span>
             <div class="card-footer">
                 <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add Trainer
                 </button><br><br>

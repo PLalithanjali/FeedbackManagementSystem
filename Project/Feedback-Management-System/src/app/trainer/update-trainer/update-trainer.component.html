@@ -8,19 +8,22 @@
             <div>
                 <tr class="d-flex justify-content-between">
                     <td>{{trainer.trainerName}}</td>
-                    <td><button type="button" class="btn btn bg-warning" (click)="toggle()">Edit</button></td>
+                    <td><button type="button" class="btn btn bg-warning" [hidden]="!show" (click)="toggle()">Edit</button></td>
                 </tr>
             <form [hidden]="show"(ngSubmit)="updateTrainer(trainer)">
                 <div class="form-group">
                     <label for="trainerId">Trainer Id:</label>
                     <input type="text" class="form-control mx-2" id="trainerId" [(ngModel)]="trainer.trainerId"
-                        name="trainerId" [value]="trainer.trainerId">
+                        name="trainerId" required #name="ngModel" [value]="trainer.trainerId">
                 </div>
                 <div class="form-group">
                     <label for="trainerName">Trainer Name:</label>
                     <input type="text" class="form-control mx-2" id="trainerName" [(ngModel)]="trainer.trainerName"
                         name="trainerName" [value]="trainer.trainerName">
                 </div>
+                <span *ngIf="name.errors?.required && name.touched" class="text-danger small">
+                    Trainer Name is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <button type="submit" id="btn1"class="btn btn bg-warning" (click)="toggle()">Update</button>
                 </div>

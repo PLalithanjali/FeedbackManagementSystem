@@ -4,25 +4,46 @@
             <div class="card-header display-4">
                 <p>Add Course</p>
             </div>
-            <form #myForm="ngForm"  (ngSubmit)="addCourse(course)">
+            <form #myForm="ngForm" (ngSubmit)="addCourse(course)">
                 <div class="card-body">
 
                     <div class="form-group">
                         <label for="courseName">Course Name:</label>
                         <input type="text" class="form-control mx-2" id="courseName" [(ngModel)]="course.courseName"
-                            name="courseName" placeholder="Enter course name">
+                            name="courseName" required
+                            minlength="3"
+                            maxlength="15"
+                            #name = "ngModel" placeholder="Enter course name">
                     </div>
+                    <span *ngIf="name.errors?.required && name.touched" class="text-danger small">
+                        Course Name is Mandatory!!!
+                    </span>
+                    <span *ngIf="(name.errors?.minlength) && name.touched" class="text-danger small">
+                        Course Name must contain minimum 3 characters!!!
+                    </span>
                     <div class="form-group">
                         <label for="courseDescription">Course Description:</label>
                         <input type="text" class="form-control mx-2" id="courseDescription"
-                            [(ngModel)]="course.courseDescription" name="courseDescription"
+                            [(ngModel)]="course.courseDescription" 
+                            required
+                            minlength="3"
+                            maxlength="20" #desc = "ngModel" name="courseDescription"
                             placeholder="Enter course description">
                     </div>
+                    <span *ngIf="desc.errors?.required && desc.touched" class="text-danger small">
+                        Course Description is Mandatory!!!
+                    </span>
                     <div class="form-group">
                         <label for="noOfDays"> No Of Days:</label>
                         <input type="text" class="form-control mx-2" id="noOfDays" [(ngModel)]="course.noOfDays"
-                            name="noOfDays" placeholder="Enter no of days">
+                            name="noOfDays"
+                            required
+                            #days = "ngModel"
+                             placeholder="Enter no of days">
                     </div>
+                    <span *ngIf="days.invalid && days.touched" class="text-danger small">
+                        No of days is Mandatory!!!
+                    </span>
 
                 </div>
                 <div class="card-footer">

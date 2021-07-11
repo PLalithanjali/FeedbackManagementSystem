@@ -16,27 +16,31 @@
           <mat-icon>home</mat-icon>
         </button>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="course">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="trainer">Trainers</a>
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null"
+          (click)="inputSideNav.open()" routerLink="course">Courses</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null"
-            routerLink="participant">Participants</a>
+          (click)="inputSideNav.open()" routerLink="trainer">Trainers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null"
+            routerLink="participant" (click)="inputSideNav.open()">Participants</a>
         </li>
         <button mat-flat-button class="btn btn-basic" *ngIf="getUser() == null" routerLink="login">
           <mat-icon>login</mat-icon>
         </button>
         <li class="nav-item">
           <a class="nav-link" *ngIf="(getRole() == 'admin'||getRole() == 'coordinator') && getUser() != null"
-            routerLink="program">Programs</a>
+            routerLink="program" (click)="inputSideNav.open()">Programs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="getUser() != null" routerLink="feedback">Feedbacks</a>
+          <a class="nav-link" *ngIf="getUser() != null"
+          (click)="inputSideNav.open()" routerLink="feedback">Feedbacks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" routerLink="skill">Skills</a>
+          <a class="nav-link" *ngIf="getRole() == 'admin' && getUser() != null" 
+          (click)="inputSideNav.open()"routerLink="skill">Skills</a>
         </li>
         <button mat-flat-button class="btn btn-basic" *ngIf="getUser() != null" (click)="inputSideNav.close()" routerLink="logout">
           <mat-icon>logout</mat-icon>

@@ -17,14 +17,19 @@
                 <div class="form-group">
                     <label for="username">UserName:</label>
                     <input type="text" class="form-control mx-2" id="username" [(ngModel)]="participant.employeeName"
-                        name="username" placeholder="Enter Username">
+                        name="username" required #name="ngModel" placeholder="Enter Username">
                 </div>
+                <span *ngIf="name.errors?.required && name.touched" class="text-danger small">
+                    User Name is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <input type="text" class="form-control mx-2" id="password" [(ngModel)]="participant.employeePassword"
-                        name="password" placeholder="Enter Password">
+                        name="password" required #pass="ngModel" placeholder="Enter Password">
                 </div>
-
+                <span *ngIf="pass.errors?.required && pass.touched" class="text-danger small">
+                    Password is Mandatory!!!
+                </span>
             </div>
             <div class="card-footer">
                 <button [disabled]="!myForm.valid" id="btn2" type="submit" class="btn btn-success">Add Participant

@@ -30,7 +30,6 @@ import { ListSkillComponent } from './skill/list-skill/list-skill.component';
 import { AddTrainerComponent } from './trainer/add-trainer/add-trainer.component';
 import { UpdateTrainerComponent } from './trainer/update-trainer/update-trainer.component';
 import { ListTrainerComponent } from './trainer/list-trainer/list-trainer.component';
-import { TrainerListSkillComponent } from './skill/trainer-list-skill/trainer-list-skill.component';
 import { FormsModule, FormGroup } from '@angular/forms';
 import { LogoutComponent } from './login/logout/logout.component';
 import { HomeComponent } from './login/home/home.component';
@@ -85,7 +84,6 @@ import { AddSkillsTrainerComponent } from './trainer/add-skills-trainer/add-skil
     AddTrainerComponent,
     UpdateTrainerComponent,
     ListTrainerComponent,
-    TrainerListSkillComponent,
     LogoutComponent,
     HomeComponent,
     HomeCourseComponent,

@@ -25,6 +25,7 @@ import { DeleteProgramComponent } from './program/delete-program/delete-program.
 import { HomeProgramComponent } from './program/home-program/home-program.component';
 import { ListProgramComponent } from './program/list-program/list-program.component';
 import { UpdateProgramComponent } from './program/update-program/update-program.component';
+import { ViewProgramBydateComponent } from './program/view-program-bydate/view-program-bydate.component';
 import { ViewProgramComponent } from './program/view-program/view-program.component';
 import { AddSkillComponent } from './skill/add-skill/add-skill.component';
 import { DeleteSkillComponent } from './skill/delete-skill/delete-skill.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'logout', component: LogoutComponent },
   { path:'home', component: HomeComponent },
+  { path:'', component: HomeComponent },
   { path:'course', component: HomeCourseComponent },
   { path:'trainer', component: HomeTrainerComponent },
   { path:'feedback', component: HomeFeedbackComponent },
@@ -72,6 +74,7 @@ const routes: Routes = [
   { path:'delete-program', component: DeleteProgramComponent },
   { path:'list-program', component: ListProgramComponent },
   { path:'view-program', component: ViewProgramComponent },
+  { path:'view-program-date', component: ViewProgramBydateComponent },
   { path:'update-feedback', component: UpdateFeedbackComponent },
   { path:'add-skill', component: AddSkillComponent },
   { path:'update-skill', component: UpdateSkillComponent },

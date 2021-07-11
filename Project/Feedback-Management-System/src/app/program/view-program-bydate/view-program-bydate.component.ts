@@ -12,6 +12,15 @@ export class ViewProgramBydateComponent implements OnInit {
   constructor(private programService: ProgramService) { }
 
   ngOnInit(): void {
+    this.programService.getAllPrograms().subscribe((response) => {
+      console.log(response);
+      this.allPrograms = response;
+      
+    },
+    (error) => {
+      console.log(error.error.message);
+      this.myError = error.error.message;
+    });
   }
 
   myError: any = ''
@@ -34,10 +43,13 @@ export class ViewProgramBydateComponent implements OnInit {
     removed: 0
 }
 
+show=true;
+
   getProgramByDate(date: Date){
     return this.programService.getProgramByDate(date).subscribe((response) => {
       console.log(response);
       this.allPrograms = response;
+      this.show = false;
       
     },
     (error) => {

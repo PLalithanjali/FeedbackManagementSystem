@@ -8,7 +8,7 @@
             <div>
                 <tr class="d-flex justify-content-between">
                     <td>{{skill.skillName}}</td>
-                    <td><button type="button" class="btn btn bg-danger" (click)="toggle()">Delete</button></td>
+                    <td><button type="button" class="btn btn bg-danger" [hidden]="!show" (click)="toggle()">Delete</button></td>
                 </tr>
             <form [hidden]="show"(ngSubmit)="deleteSkill(skill)">
                 <div class="form-group">

@@ -1,6 +1,6 @@
 <div class="container">
     <div>
-        <h2>Delete a Skill</h2>
+        <h2>Update a Skill</h2>
         <h2>{{ myError }}</h2>
     </div>
     <div class="card" *ngFor="let skill of allSkills">
@@ -8,7 +8,7 @@
             <div>
                 <tr class="d-flex justify-content-between">
                     <td>{{skill.skillName}}</td>
-                    <td><button type="button" class="btn btn bg-warning" (click)="toggle()">Edit</button></td>
+                    <td><button type="button" class="btn btn bg-warning" [hidden]="!show" (click)="toggle()">Edit</button></td>
                 </tr>
             <form [hidden]="show"(ngSubmit)="updateSkill(skill)">
                 <div class="form-group">
@@ -19,8 +19,11 @@
                 <div class="form-group">
                     <label for="skillName">Skill Name:</label>
                     <input type="text" class="form-control mx-2" id="skillId" [(ngModel)]="skill.skillName"
-                        name="skillName" [value]="skill.skillName">
+                        name="skillName" required #name = "ngModel" [value]="skill.skillName">
                 </div>
+                <span *ngIf="name.errors?.required && name.touched" class="text-danger small">
+                    Skill Name is Mandatory!!!
+                </span>
                 <div class="form-group">
                     <button type="submit" id="btn1"class="btn btn bg-warning" (click)="toggle()">Update</button>
                 </div>

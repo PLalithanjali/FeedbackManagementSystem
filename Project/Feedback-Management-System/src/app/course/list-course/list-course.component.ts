@@ -20,7 +20,6 @@ export class ListCourseComponent implements OnInit {
   }
   allCourses: Course[] = [];
   myError: any;
-  title: String = 'Welcome to All Courses!!';
 
   ngOnInit(): void {
     this.courseService.getAllCourses().subscribe((response) => {

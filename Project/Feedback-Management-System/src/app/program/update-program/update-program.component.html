@@ -24,13 +24,19 @@
                     <div class="form-group">
                         <label for="startDate">Start Date:</label>
                         <input type="date" class="form-control mx-2" id="startDate" [(ngModel)]="program.startDate"
-                            name="startDate" placeholder="Enter Start Date">
+                            name="startDate" required #sdate="ngModel" placeholder="Enter Start Date">
                     </div>
+                    <span *ngIf="sdate.errors?.required && sdate.touched" class="text-danger small">
+                        Start Date is Mandatory!!!
+                    </span>
                     <div class="form-group">
                         <label for="endDate">End Date:</label>
                         <input type="date" class="form-control mx-2" id="endDate" [(ngModel)]="program.endDate"
-                            name="endDate" placeholder="Enter End Date">
+                            name="endDate" required #edate="ngModel" placeholder="Enter End Date">
                     </div>
+                    <span *ngIf="edate.errors?.required && edate.touched" class="text-danger small">
+                        End Date is Mandatory!!!
+                    </span>
                     <div class="form-group">
                         <label for="course"> Course:</label>
                         <input type="text" class="form-control mx-2" id="course" [(ngModel)]="program.course.courseName"
